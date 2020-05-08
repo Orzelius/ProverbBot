@@ -18,7 +18,7 @@ workflows:
           cron: "*/5 * * * *"
           filters:
             branches:
-                only:
-                  - master
+              only:
+                - master
     jobs:
       - tweet
