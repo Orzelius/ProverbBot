@@ -12,6 +12,13 @@ jobs:
             - run: npm install
             - run: npm run tweet
 workflows:
-    build-and-test:
-      jobs:
-        - tweet
+  tweet:
+    jobs:
+      - tweet
+    triggers:
+      - schedule:
+          cron: "*/5 * * * *"
+          filters:
+            branches:
+              only:
+                - master
