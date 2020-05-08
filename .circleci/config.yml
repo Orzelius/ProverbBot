@@ -13,12 +13,12 @@ jobs:
             - run: npm run tweet
 workflows:
   tweet:
-    jobs:
-      - tweet
     triggers:
       - schedule:
-          cron: "*/5 * * * *"
-          filters:
-            branches:
+        cron: "*/5 * * * *"
+        filters:
+          branches:
               only:
                 - master
+    jobs:
+      - tweet
