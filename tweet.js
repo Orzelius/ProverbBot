@@ -21,7 +21,8 @@ ${item.japanese[0].reading}。
 
 ${english}
 
-Random proverb ${proverbId + 1}`;
+
+Random proverb no. ${proverbId + 1}`;
 
   return tweet;
 }
@@ -41,8 +42,8 @@ Length: ${tweet.length}
 Date: ${new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '')}
 ${Date.now()}
 }`;
-console.log('pw: ' + process.env.PASSWORD);
-fs.appendFile('log.txt', log + '\n', function (err) {
+
+fs.appendFile('log.log', log + '\n', function (err) {
   if (err) throw err;
   console.log(log);
 });
