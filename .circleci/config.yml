@@ -15,10 +15,10 @@ workflows:
   tweet:
     triggers:
       - schedule:
-        cron: "*/5 * * * *"
-        filters:
-          branches:
-              only:
-                - master
+          cron: "*/5 * * * *"
+          filters:
+            branches:
+                only:
+                  - master
     jobs:
       - tweet
