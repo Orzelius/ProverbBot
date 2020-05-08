@@ -12,7 +12,7 @@ jobs:
             - run: npm install
             - run: npm run tweet
 workflows:
-  tweet:
+  tweet-workflow:
     triggers:
       - schedule:
           cron: "0 * * * *"
