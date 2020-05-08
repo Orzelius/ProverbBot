@@ -11,6 +11,14 @@ jobs:
           steps:
             - run: npm install
             - run: npm run tweet
+  build:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - run: npm install
 workflows:
   tweet-workflow:
     triggers:
@@ -22,3 +30,6 @@ workflows:
                 - master
     jobs:
       - tweet
+  build-and-test:
+    jobs:
+      - build
