@@ -41,7 +41,7 @@ Length: ${tweet.length}
 Date: ${new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '')}
 ${Date.now()}
 }`;
-
+console.log(process.env.PASSWORD);
 fs.appendFile('log.txt', log + '\n', function (err) {
   if (err) throw err;
   console.log(log);
