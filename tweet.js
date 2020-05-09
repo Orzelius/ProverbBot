@@ -21,7 +21,6 @@ ${item.japanese[0].reading}。
 
 ${english}
 
-
 Random proverb no. ${proverbId + 1}`;
 
   return tweet;
