@@ -19,6 +19,7 @@
     "puppeteer": "^3.0.2",
     "request": "^2.88.2",
     "request-promise": "^4.2.5",
+    "twitter": "^1.7.1",
     "unofficial-jisho-api": "^2.0.8"
   }
 }

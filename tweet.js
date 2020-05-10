@@ -1,5 +1,13 @@
 const fs = require('fs');
 const boxen = require('boxen');
+var Twitter = require('twitter');
+ 
+var client = new Twitter({
+  consumer_key: process.env.API_key,
+  consumer_secret: process.env.API_secret_key,
+  access_token_key: process.env.Access_token,
+  access_token_secret: process.env.Access_token_secret
+});
 
 let rawdata = fs.readFileSync('sortedProverbs_v2.json');
 let proverbs = JSON.parse(rawdata);
@@ -42,7 +50,9 @@ Date: ${new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '')}
 ${Date.now()}
 }`;
 
-fs.appendFile('log.log', log + '\n', function (err) {
-  if (err) throw err;
-  console.log(log);
+client.post('statuses/update', {status: tweet},  function(error, tweet, response) {
+  if(error) throw error; // Raw response object.
+  else console.log('Success!');
 });
+
+
