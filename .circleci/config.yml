@@ -23,7 +23,7 @@ workflows:
   tweet-workflow:
     triggers:
       - schedule:
-          cron: "00 01,13 * * *"
+          cron: "0 0 * * *"
           filters:
             branches:
               only:
