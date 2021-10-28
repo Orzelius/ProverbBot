@@ -28,7 +28,8 @@ ${item.japanese[0].reading}。
 
 ${english}
 
-Random proverb no. ${proverbId + 1}.${Date.now().toString().slice(11)}`;
+Random proverb no. ${proverbId + 1}.${Date.now().toString().slice(11)}
+#nihongo #japanese #日本語`;
 
   return tweet;
 }
